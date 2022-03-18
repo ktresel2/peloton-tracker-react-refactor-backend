@@ -1,11 +1,19 @@
 const mongoose = require('mongoose')
 
 const rideSchema = new mongoose.Schema({
+	user: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'users',
+	},
 	instructor: {
 		type: String,
 		required: true,
 	},
-	length: {
+	duration: {
+		type: Number,
+		required: true,
+	},
+	mileage: {
 		type: Number,
 		required: true,
 	},
